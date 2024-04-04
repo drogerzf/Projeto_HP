@@ -4,8 +4,7 @@ const db = require('./connection');
 const bodyParser = require('body-parser');
 
 
-
-const PORT = 3000; 
+const PORT = 3000;
 
 app.listen(PORT, function() {
     console.log(`o express está na porta ${PORT}`);
@@ -26,5 +25,8 @@ db
 
 //routes    
 app.get("/", (req, res) => {
-    res.send(`está funcionando na porta ${PORT}`)
-});
+    res.send(`está funcionando na porta ~routes~ ${PORT}`)
+}); 
+
+//jobs routes
+app.use('/jobs', require('./routes/jobs'));
