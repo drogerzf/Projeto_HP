@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const db = require('./connection');
 const bodyParser = require('body-parser');
-
+const jobsRouter = require('./routes/jobs');
+const Job = require('./models/Job');
 
 const PORT = 3000;
 
@@ -29,4 +30,4 @@ app.get("/", (req, res) => {
 }); 
 
 //jobs routes
-app.use('/jobs', require('./routes/jobs'));
+app.use('/jobs', jobsRouter);

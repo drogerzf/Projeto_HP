@@ -2,17 +2,18 @@ const express = require('express');
 const router = express.Router();
 const Job = require('../models/Job');
 
-router.get('/test', (req, res) => {
-    res.send("teste /test");
-});
+//rota teste
+router.get('/job', (req, res) => {
+    res.send('Esta é a rota *teste* para /job');
+  });
 
 //add job via post
 router.post('/add', (req, res) => {
-    let{TITULO, SALARY, COMPANY, EMAIL, NEW} = req.body;
+    let{TITLE, SALARY, COMPANY, EMAIL, NEW} = req.body;
 
     //insert
     Job.create({
-        TITULO,
+        TITLE,
         SALARY,
         COMPANY,
         EMAIL,
@@ -22,4 +23,4 @@ router.post('/add', (req, res) => {
     .catch(err => console.log('atenção, erro', err));
 });
 
-module.exports = router
+module.exports = router;

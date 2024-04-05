@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
-const db = require('./connection');
+const db = require('../connection');
 
 const Job = db.define('Job', {
-    TITULO: {
+    TITLE: {
         type: Sequelize.STRING, 
     },
     SALARY: {
@@ -19,4 +19,4 @@ const Job = db.define('Job', {
     }
 });
 
-module.exports = Job
+module.exports = Job;
